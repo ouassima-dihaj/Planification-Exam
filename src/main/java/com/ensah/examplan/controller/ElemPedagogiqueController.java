@@ -11,6 +11,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/elements")
+@CrossOrigin("http://localhost:3000/")
+
 public class ElemPedagogiqueController {
     @Autowired
     ElemPedagogiqueService elemPedagogiqueService;
@@ -28,13 +30,11 @@ public class ElemPedagogiqueController {
     }
     @PutMapping("/{id}")
     public ResponseEntity<ElementPedagogique> updateElemPedagogique(@PathVariable("id") Long id,@RequestBody ElementPedagogique elementPedagogique){
-
-      return  ResponseEntity.ok(elemPedagogiqueService.updateElemPedagogique(id,elementPedagogique));
+        return  ResponseEntity.ok(elemPedagogiqueService.updateElemPedagogique(id,elementPedagogique));
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteElemPedagogique(@PathVariable("id") Long id  ){
-
-          elemPedagogiqueService.deleteElemPedagogique(id);
-          return ResponseEntity.ok("ElementPedagogique deleted successfully");
+        elemPedagogiqueService.deleteElemPedagogique(id);
+        return ResponseEntity.ok("ElementPedagogique deleted successfully");
     }
 }

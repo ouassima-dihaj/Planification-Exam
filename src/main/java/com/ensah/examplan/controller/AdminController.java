@@ -30,7 +30,6 @@ public class AdminController {
         return new ResponseEntity<>(savedAdmin, HttpStatus.CREATED);
     }
     @GetMapping("{idAdmin}")
-    @PreAuthorize("hasAuthority('ROLE_USER')")
     public ResponseEntity<Admin> getAdminById(@PathVariable("idAdmin") Long id){
         Admin admin = adminService.getAdminById(id);
         return ResponseEntity.ok(admin);

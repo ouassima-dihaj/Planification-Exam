@@ -17,4 +17,5 @@ public class UserInfoServiceImpl implements UserInfoService{
         userInfo.setPassword(passwordEncoder.encode(userInfo.getPassword()));
         userInfoRepository.save(userInfo);
     }
+
 }
