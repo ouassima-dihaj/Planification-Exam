@@ -33,6 +33,7 @@ public class ElemPedagogiqueServiceImpl implements   ElemPedagogiqueService{
         elementPedagogique1.setNiveau(elementPedagogique.getNiveau());
         elementPedagogique1.setType(elementPedagogique.getType());
         elementPedagogique1.setTitre(elementPedagogique.getTitre());
+        elementPedagogique1.setEnseignant(elementPedagogique.getEnseignant());
         return elemPedagogiqueRepository.save(elementPedagogique1);
     }
 
